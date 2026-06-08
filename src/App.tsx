@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import { SiteFooter } from './components/SiteFooter'
 import { SiteHeader } from './components/SiteHeader'
 import { getRouteFromPath } from './booking'
 import { toAppPath, toBrowserPath } from './routing'
@@ -44,6 +45,8 @@ function App() {
           <BookingView reason={route.reason} onBack={() => navigate('/')} />
         )}
       </main>
+
+      <SiteFooter />
     </div>
   )
 }

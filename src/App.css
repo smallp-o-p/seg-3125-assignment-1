@@ -1,4 +1,6 @@
 .site-shell {
+  --site-chrome: #2f343a;
+  --site-chrome-border: #1f2429;
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -6,8 +8,8 @@
 
 .site-header {
   padding: 18px 0;
-  border-bottom: 1px solid #1f2429;
-  background: #2f343a;
+  border-bottom: 1px solid var(--site-chrome-border);
+  background: var(--site-chrome);
 }
 
 .site-header-inner {
@@ -83,6 +85,70 @@
   margin: 0 auto;
   padding: clamp(36px, 7vw, 80px) 0;
   flex: 1;
+}
+
+.site-footer {
+  padding: 24px 0;
+  border-top: 1px solid var(--site-chrome-border);
+  background: var(--site-chrome);
+  color: var(--line);
+}
+
+.site-footer-inner {
+  width: min(1120px, calc(100% - 40px));
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 0 auto;
+}
+
+.site-footer-brand {
+  display: grid;
+  gap: 6px;
+}
+
+.site-footer-brand strong {
+  color: var(--panel);
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.site-footer-brand span,
+.site-footer address {
+  color: var(--line);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.site-footer-details {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.site-footer-block {
+  display: grid;
+  gap: 6px;
+}
+
+.site-footer-label {
+  color: var(--panel);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.site-footer a {
+  color: var(--accent);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.site-footer address {
+  max-width: 260px;
+  font-style: normal;
 }
 
 .home-view,
@@ -540,9 +606,15 @@ textarea {
 
 @media (max-width: 760px) {
   .site-header-inner,
+  .site-footer-inner,
   .header-contact {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .site-footer-details {
+    flex-direction: column;
+    gap: 18px;
   }
 
   .site-main {
